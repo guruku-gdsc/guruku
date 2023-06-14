@@ -45,7 +45,7 @@ export default function WhyChooseUs() {
 
 export function Card({ item }) {
   return (
-    <div className="flex flex-col gap-16 bg-[#FAFAFA] p-8">
+    <div className="flex flex-col gap-16 bg-[#FAFAFA] p-8" data-aos="fade-up">
       <div className="w-[100px] h-[100px] bg-white2 rounded-full" />
       <div className="flex flex-col gap-4">
         <p className="text-lg font-semibold">{item.title}</p>
