@@ -27,7 +27,7 @@ export default function Hero() {
           </div>
         </div>
         <Image
-          src={"/svg/home/hero-decoration.svg"}
+          src={"/img/home/hero-decoration.webp"}
           width={600}
           height={600}
           alt=""
