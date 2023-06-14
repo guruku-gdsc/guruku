@@ -13,7 +13,7 @@ export default function Button({
 
   return (
     <button
-      className={`font-medium rounded-lg py-3 px-8 hover:scale-105 active:scale-95 transition outline-none ${variantClasses} ${className}`}
+      className={`font-medium rounded-lg py-3 px-8 active:scale-95 transition outline-none ${variantClasses} ${className}`}
       {...props}
     >
       {children}

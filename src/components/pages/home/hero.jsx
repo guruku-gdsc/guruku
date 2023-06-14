@@ -21,7 +21,7 @@ export default function Hero() {
           <div className="h-[60px] flex gap-2">
             <Input
               placeholder={"Apa yang ingin kamu pelajari?"}
-              className="flex-1"
+              icon={"search"}
             />
             <Button>Temukan Guru Terbaik</Button>
           </div>
