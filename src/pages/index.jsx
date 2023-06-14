@@ -1,5 +1,5 @@
 import { SeoMeta } from "@/components/common/seo-meta";
-import { Hero } from "@/components/pages/home";
+import { Hero, WhyChooseUs } from "@/components/pages/home";
 
 export default function Home() {
   return (
@@ -7,6 +7,7 @@ export default function Home() {
       <SeoMeta />
       <main>
         <Hero />
+        <WhyChooseUs />
       </main>
     </>
   );

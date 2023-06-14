@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className="min-h-screen flex flex-col bg-green">
+    <div className="min-h-screen flex flex-col bg-green1">
       <Navbar />
       <div className="wrapper flex-1 flex flex-col">
         <div className="max-w-2xl flex-1 justify-center flex flex-col gap-6 pb-20">
