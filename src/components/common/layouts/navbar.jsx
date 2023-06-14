@@ -21,7 +21,7 @@ export default function Navbar() {
   return (
     <div className="py-8">
       <div className="wrapper flex justify-between items-center">
-        <div className="flex items-center gap-12">
+        <div className="flex items-center gap-16">
           <Link href={"/"}>
             <div className="flex items-center gap-2">
               <Image src={"/svg/logo.svg"} width={32} height={32} alt="" />

@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className="min-h-screen flex flex-col bg-green">
+    <div className="min-h-screen flex flex-col bg-green1">
       <Navbar />
       <div className="wrapper flex-1 flex flex-col">
         <div className="max-w-2xl flex-1 justify-center flex flex-col gap-6 pb-20">
@@ -21,7 +21,7 @@ export default function Hero() {
           <div className="h-[60px] flex gap-2">
             <Input
               placeholder={"Apa yang ingin kamu pelajari?"}
-              className="flex-1"
+              icon={"search"}
             />
             <Button>Temukan Guru Terbaik</Button>
           </div>
