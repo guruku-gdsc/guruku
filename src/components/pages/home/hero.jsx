@@ -8,7 +8,7 @@ export default function Hero() {
     <div className="min-h-screen flex flex-col bg-green1">
       <Navbar />
       <div className="wrapper flex-1 flex flex-col">
-        <div className="max-w-2xl flex-1 justify-center flex flex-col gap-6 pb-20">
+        <div className="max-w-2xl flex-1 justify-center flex flex-col gap-6 pb-10">
           <h1 className="text-5xl font-bold leading-[60px] text-white">
             Temukan Guru Berkualitas yang Sesuai dengan Kebutuhan Anda
           </h1>
