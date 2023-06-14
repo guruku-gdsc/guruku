@@ -1,5 +1,5 @@
 const variants = {
-  primary: "text-black bg-yellow",
+  primary: "font-semibold text-black bg-yellow",
   outline: "text-white1 bg-transparent border border-white1",
 };
 
