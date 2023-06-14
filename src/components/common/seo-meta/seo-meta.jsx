@@ -13,7 +13,7 @@ export default function SeoMeta({ title }) {
         content="Kami menyediakan akses mudah untuk menemukan guru umum dan guru dengan keahlian khusus dalam mengajar murid dengan disabilitas. Dengan metode belajar online dan offline, kami membantu memenuhi kebutuhan pendidikan Anda dengan cara yang nyaman dan terpercaya."
       />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link rel="icon" href="/img/logo-guruku.ico" />
+      <link rel="icon" href="/img/logo-favicon.ico" />
     </Head>
   );
 }
