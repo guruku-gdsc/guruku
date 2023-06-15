@@ -5,10 +5,10 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className="min-h-screen flex flex-col bg-green1">
+    <div className="max-h-md:min-h-screen flex flex-col bg-green1">
       <Navbar />
       <div className="wrapper flex-1 flex flex-col">
-        <div className="max-w-2xl flex-1 justify-center flex flex-col gap-6 pb-10">
+        <div className="max-w-2xl flex-1 justify-center flex flex-col gap-6 pt-16 max-h-md:pt-0 pb-32 max-h-md:pb-16">
           <h1 className="text-5xl font-bold leading-[60px] text-white">
             Temukan Guru Berkualitas yang Sesuai dengan Kebutuhan Anda
           </h1>
@@ -28,8 +28,8 @@ export default function Hero() {
         </div>
         <Image
           src={"/img/home/hero-decoration.webp"}
-          width={600}
-          height={600}
+          width={640}
+          height={640}
           alt=""
           className="absolute bottom-0 right-10"
         />
