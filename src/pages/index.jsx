@@ -1,5 +1,10 @@
 import { SeoMeta } from "@/components/common/seo-meta";
-import { Hero, HowItWorks, WhyChooseUs } from "@/components/pages/home";
+import {
+  Hero,
+  HowItWorks,
+  Testimonial,
+  WhyChooseUs,
+} from "@/components/pages/home";
 
 export default function Home() {
   return (
@@ -8,7 +13,8 @@ export default function Home() {
       <main>
         <Hero />
         <WhyChooseUs />
-        <HowItWorks />
+        {/* <HowItWorks /> */}
+        <Testimonial />
       </main>
     </>
   );

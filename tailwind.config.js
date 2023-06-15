@@ -14,6 +14,9 @@ module.exports = {
         black1: "#222",
         grey1: "#666",
       },
+      screens: {
+        "max-h-md": { raw: "(max-height: 760px)" },
+      },
     },
   },
   plugins: [],
