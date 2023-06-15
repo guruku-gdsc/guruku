@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const WhyChooseUsList = [
   {
     title: "Guru Berkualitas dan Terpercaya",
@@ -34,7 +36,7 @@ export default function WhyChooseUs() {
           </div>
           <div className="grid grid-cols-2 gap-6">
             {WhyChooseUsList.map((item, index) => (
-              <Card key={index} item={item} />
+              <Card key={index} item={item} index={index} />
             ))}
           </div>
         </div>
@@ -43,10 +45,18 @@ export default function WhyChooseUs() {
   );
 }
 
-export function Card({ item }) {
+export function Card({ item, index }) {
   return (
     <div className="flex flex-col gap-16 bg-[#FAFAFA] p-8" data-aos="fade-up">
-      <div className="w-[100px] h-[100px] bg-white2 rounded-full" />
+      <div className="w-[100px] h-[100px] relative bg-white2 rounded-full">
+        <Image
+          src={`/svg/home/why-choose-us/icon-${index + 1}.svg`}
+          width={60}
+          height={60}
+          alt=""
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+        />
+      </div>
       <div className="flex flex-col gap-4">
         <p className="text-lg font-semibold">{item.title}</p>
         <p className="leading-7 text-grey1">{item.content}</p>
