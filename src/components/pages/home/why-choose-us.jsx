@@ -5,21 +5,25 @@ const WhyChooseUsList = [
     title: "Guru Berkualitas dan Terpercaya",
     content:
       "Kami menyediakan guru-guru berkualitas yang telah melalui proses seleksi ketat untuk memastikan pengalaman belajar yang optimal.",
+    bgColor: "#FBEEE1",
   },
   {
     title: "Fleksibilitas Belajar Online dan Offline",
     content:
       "Anda dapat memilih untuk belajar melalui video call online atau mengundang guru untuk datang ke rumah Anda.",
+    bgColor: "#DAEBEB",
   },
   {
     title: "Dukungan untuk Murid dengan Disabilitas",
     content:
       "Kami berkomitmen untuk menciptakan lingkungan belajar yang inklusif dan membantu Anda menemukan guru yang dapat mengakomodasi kebutuhan pendidikan khusus Anda.",
+    bgColor: "#FBF3F2",
   },
   {
     title: "Pilihan Guru dengan Keahlian Khusus",
     content:
       "Kami memberikan opsi yang luas agar Anda dapat menemukan guru yang sesuai dengan gaya belajar dan minat Anda.",
+    bgColor: "#EBF3E7",
   },
 ];
 
@@ -48,7 +52,12 @@ export default function WhyChooseUs() {
 export function Card({ item, index }) {
   return (
     <div className="flex flex-col gap-16 bg-[#FAFAFA] p-8" data-aos="fade-up">
-      <div className="w-[100px] h-[100px] relative bg-white2 rounded-full">
+      <div
+        className={`w-[100px] h-[100px] relative rounded-full`}
+        style={{
+          backgroundColor: item.bgColor,
+        }}
+      >
         <Image
           src={`/svg/home/why-choose-us/icon-${index + 1}.svg`}
           width={60}
