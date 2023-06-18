@@ -1,6 +1,7 @@
 const variants = {
-  primary: "font-semibold text-black bg-yellow1",
-  outline: "text-white1 bg-transparent border border-white1",
+  primary: "font-semibold text-black bg-yellow1 hover:bg-[#EEB31D]",
+  outline:
+    "text-white1 bg-transparent border border-white1 hover:bg-white hover:text-green1",
 };
 
 export default function Button({
@@ -13,7 +14,7 @@ export default function Button({
 
   return (
     <button
-      className={`font-medium rounded-lg py-3 px-8 active:scale-95 transition outline-none ${variantClasses} ${className}`}
+      className={`font-medium py-3 px-8 active:scale-95 transition outline-none rounded-lg ${variantClasses} ${className}`}
       {...props}
     >
       {children}
