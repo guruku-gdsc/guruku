@@ -16,7 +16,7 @@ export default function Home() {
         <WhyChooseUs />
         {/* <HowItWorks /> */}
         <Testimonial />
-        <TopTeacher />
+        {/* <TopTeacher /> */}
       </main>
     </>
   );
