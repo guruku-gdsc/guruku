@@ -4,6 +4,7 @@ import {
   HowItWorks,
   Testimonial,
   WhyChooseUs,
+  TopTeacher,
 } from "@/components/pages/home";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
         <WhyChooseUs />
         <HowItWorks />
         <Testimonial />
+        <TopTeacher />
       </main>
     </>
   );

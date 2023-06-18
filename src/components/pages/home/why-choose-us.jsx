@@ -63,7 +63,7 @@ export function Card({ item, index }) {
           width={60}
           height={60}
           alt=""
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+          className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
         />
       </div>
       <div className="flex flex-col gap-4">
