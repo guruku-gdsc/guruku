@@ -20,7 +20,7 @@ const navbarList = [
 export default function Navbar() {
   return (
     <div className="py-8">
-      <div className="wrapper flex justify-between items-center">
+      <div className="flex items-center justify-between wrapper">
         <div className="flex items-center gap-16">
           <Link href={"/"}>
             <div className="flex items-center gap-2">
@@ -38,7 +38,10 @@ export default function Navbar() {
             ))}
           </div>
         </div>
-        <Button variant="outline">Masuk</Button>
+        <div className="flex gap-4">
+          <Button variant="outline">Masuk</Button>
+          <Button variant="outline">Daftar</Button>
+        </div>
       </div>
     </div>
   );
