@@ -25,7 +25,7 @@ const testimonalList = [
 
 export default function Testimonial() {
   return (
-    <div className="py-32">
+    <div className="bg-[#F0F6F5] py-16">
       <div className="wrapper">
         <div className="flex flex-col gap-16 items-center">
           <div className="flex flex-col items-center gap-2">

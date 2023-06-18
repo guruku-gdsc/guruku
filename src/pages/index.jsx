@@ -3,6 +3,7 @@ import {
   Hero,
   HowItWorks,
   Testimonial,
+  TopTeacher,
   WhyChooseUs,
 } from "@/components/pages/home";
 
@@ -15,6 +16,7 @@ export default function Home() {
         <WhyChooseUs />
         {/* <HowItWorks /> */}
         <Testimonial />
+        <TopTeacher />
       </main>
     </>
   );
