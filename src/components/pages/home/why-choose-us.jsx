@@ -25,7 +25,7 @@ const WhyChooseUsList = [
 
 export default function WhyChooseUs() {
   return (
-    <div className="pt-32">
+    <div className="py-16">
       <div className="wrapper">
         <div className="flex flex-col gap-10">
           <div className="flex flex-col gap-2">
