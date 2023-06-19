@@ -7,9 +7,76 @@ const labelList = ["Bahasa Jepang", "Guru Umum", "Sp Disabilitas"];
 
 const levelList = ["SD", "SMP", "SMA", "Mahasiswa"];
 
+const TopTeacherList = [
+  {
+    id: 1,
+    name: "Aliya",
+    desc: "Lulusan ITB yang telah 8 tahun belajar Bahasa Jepang sebagai hobi hingga meraih Sertifikasi internasional dengan nilai sempurna. Berpengalaman 4 tahun mengajar murid dengan berbagai usia ...",
+    category: ["Bahasa Jepang", "Guru Umum"],
+    rate: "Rp 200.000/jam",
+    review: "140",
+    photo: "/img/home/top-teacher-1.png",
+  },
+  {
+    id: 2,
+    name: "Leo",
+    desc: "Seorang Software Developer dengan pengalaman 7 tahun yang menawarkan kursus belajar bahasa pemrograman PHP, Javascript, Laravel, Python, HTML, CSS, MySQL, Bootstrap, ...",
+    category: ["Pemrograman Web", "Guru Umum", "Sp Disabilitas"],
+    rate: "Rp 180.000/jam",
+    review: "78",
+    photo: "/img/home/top-teacher-4.png",
+  },
+  {
+    id: 3,
+    name: "Nadia",
+    desc: "Kursus akuntansi keuangan, perpajakan dan manajemen keuangan dengan metode pembelajaran yang simpel, serta jasa kompilasi laporan keuangan dan perpajakan ...",
+    category: ["Akuntansi", "Guru Umum"],
+    rate: "Rp 150.000/jam",
+    review: "122",
+    photo: "/img/home/top-teacher-2.png",
+  },
+  {
+    id: 4,
+    name: "Katrin",
+    desc: "UK graduate tutoring in IELTS Academic, English Conversational Class and English for School & University Students (for aged 13 and above). Flexible schedule and personalised syllabus!",
+    category: ["Bahasa Inggris", "Guru Umum", "Sp Disabilitas"],
+    rate: "Rp 175.000/jam",
+    review: "110",
+    photo: "/img/home/top-teacher-5.png",
+  },
+  {
+    id: 5,
+    name: "Khalisa",
+    desc: "Mahasiswa S2 Unesa menawarkan Kursus Matematika Jenjang SD, SMP dan SMA dan persiapan SNBT serta persiapan tes kedinasan di Surabaya dan seluruh Indonesia. Join yuk, dapatkan pengalaman belajar matem ...",
+    category: ["Matematika", "Guru Umum", "Sp Disabilitas"],
+    rate: "Rp 140.000/jam",
+    review: "80",
+    photo: "/img/home/top-teacher-3.png",
+  },
+  {
+    id: 6,
+    name: "James",
+    desc: "Dosen dan pengajar privat eksakta, khususnya pelatih OSN Kimia SMA hingga tingkat provinsi serta ongoing kandidat S3, lulusan S2 TL ITB dan S1 TK UNPAR dengan pengalaman mengajar 7 tahun ...",
+    category: ["Kimia", "Guru Umum", "Sp Disabilitas"],
+    rate: "Rp 125.000/jam",
+    review: "95",
+    photo: "/img/home/top-teacher-6.png",
+  },
+];
+
 export default function Guru() {
   const router = useRouter();
-  const { id, photo, name } = router.query;
+  const { id } = router.query;
+
+  const selectedTeacher = TopTeacherList.find(
+    (teacher) => teacher.id === Number(id)
+  );
+
+  if (!selectedTeacher) {
+    return <div>Guru tidak ditemukan.</div>;
+  }
+
+  const { name, photo, review, desc } = selectedTeacher;
 
   return (
     <>
@@ -28,11 +95,7 @@ export default function Guru() {
                   </div>
                 ))}
               </div>
-              <p className="text-[40px] font-semibold text-white">
-                Lulusan ITB yang telah 8 tahun belajar Bahasa Jepang sebagai
-                hobi hingga meraih Sertifikasi internasional dengan nilai
-                sempurna.
-              </p>
+              <p className="text-[40px] font-semibold text-white">{desc}</p>
             </div>
             <div className="w-80 absolute right-10 flex flex-col items-center gap-6 bg-white rounded-2xl p-4">
               <Image
@@ -77,7 +140,7 @@ export default function Guru() {
                       alt=""
                     />
                   </div>
-                  <p className="text-sm text-grey1">(140)</p>
+                  <p className="text-sm text-grey1">({review})</p>
                 </div>
               </div>
               <div className="w-full flex flex-col gap-4">

@@ -102,10 +102,7 @@ export default function TopTeacher() {
         </div>
         <div className="grid grid-cols-2 mt-10 gap-y-10 gap-x-8">
           {filteredTopTeacherList.map((item) => (
-            <Link
-              key={item.id}
-              href={`/guru/${item.id}?photo=${item.photo}&name=${item.name}`}
-            >
+            <Link key={item.id} href={`/guru/${item.id}`}>
               <TeacherCard item={item} />
             </Link>
           ))}
