@@ -54,8 +54,12 @@ export default function Navbar({ dark }) {
           </div>
         </div>
         <div className="flex gap-4">
-          <Button variant={dark ? "outline-dark" : "outline"}>Masuk</Button>
-          <Button variant={dark ? "outline-dark" : "outline"}>Daftar</Button>
+          <Link href="/masuk">
+            <Button variant={dark ? "outline-dark" : "outline"}>Masuk</Button>
+          </Link>
+          <Link href="/daftar">
+            <Button variant={dark ? "outline-dark" : "outline"}>Daftar</Button>
+          </Link>
         </div>
       </div>
     </div>

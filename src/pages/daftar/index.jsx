@@ -92,19 +92,23 @@ export default function Daftar() {
                 />
 
                 <select
+                  defaultValue={"Jenis Kelamin"}
                   name="jenisKelaminGuru"
                   onChange={handleInputChange}
                   className="px-6 py-5 bg-[#fafafa] rounded-lg outline-none transition focus:bg-[#f5f5f5] border-r-transparent border-r-[24px]"
                 >
-                  <option value="" disabled selected>
+                  <option value="Jenis Kelamin" disabled>
                     Jenis Kelamin
                   </option>
                   <option value="Laki-laki">Laki-laki</option>
                   <option value="Perempuan">Perempuan</option>
                 </select>
 
-                <select className="px-6 py-5 bg-[#fafafa] rounded-lg outline-none transition focus:bg-[#f5f5f5] border-r-transparent border-r-[24px]">
-                  <option value="" disabled selected>
+                <select
+                  defaultValue={"Tipe Guru"}
+                  className="px-6 py-5 bg-[#fafafa] rounded-lg outline-none transition focus:bg-[#f5f5f5] border-r-transparent border-r-[24px]"
+                >
+                  <option value="Tipe Guru" disabled>
                     Tipe Guru
                   </option>
                   <option value="umum">Guru Umum</option>
@@ -133,8 +137,11 @@ export default function Daftar() {
                   placeholder="Nama Lengkap"
                   className="px-6 py-5 bg-[#fafafa] rounded-lg outline-none transition focus:bg-[#f5f5f5]"
                 />
-                <select className="px-6 py-5 bg-[#fafafa] rounded-lg outline-none transition focus:bg-[#f5f5f5] border-r-transparent border-r-[24px]">
-                  <option value="" disabled selected>
+                <select
+                  defaultValue={"Tingkat Pendidikan"}
+                  className="px-6 py-5 bg-[#fafafa] rounded-lg outline-none transition focus:bg-[#f5f5f5] border-r-transparent border-r-[24px]"
+                >
+                  <option value="Tingkat Pendidikan" disabled>
                     Tingkat Pendidikan
                   </option>
                   <option value="sd">SD</option>

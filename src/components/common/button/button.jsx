@@ -1,13 +1,3 @@
-// const variants = (props) => {
-//   if (props.variant === "primary") {
-//     return "font-semibold text-black bg-yellow1 hover:bg-[#EEB31D]";
-//   } else if (props.variant === "outline") {
-//     return "bg-transparent border border-white1 text-white1 hover:bg-white hover:text-green1";
-//   } else if (props.variant === "outline-dark") {
-//     return "bg-transparent border border-green1 text-green1 hover:bg-green1 hover:text-white";
-//   }
-// };
-
 const variants = {
   primary: "font-semibold text-black bg-yellow1 hover:bg-[#EEB31D]",
   outline:
