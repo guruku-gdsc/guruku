@@ -2,6 +2,7 @@ import { SeoMeta } from "../seo-meta";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import { Footer } from ".";
 
 export default function AppLayout({ children }) {
   useEffect(() => {
@@ -11,7 +12,8 @@ export default function AppLayout({ children }) {
   return (
     <>
       <SeoMeta />
-      <div>{children}</div>
+      <main>{children}</main>
+      <Footer />
     </>
   );
 }
