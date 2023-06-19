@@ -94,8 +94,8 @@ export default function TopTeacher() {
           </div>
         </div>
         <div className="grid grid-cols-2 mt-10 gap-y-10 gap-x-8">
-          {filteredTopTeacherList.map((item, index) => (
-            <TeacherCard key={index} item={item} index={index} />
+          {filteredTopTeacherList.map((item) => (
+            <TeacherCard key={item.name} item={item} />
           ))}
         </div>
       </div>
@@ -103,17 +103,7 @@ export default function TopTeacher() {
   );
 }
 
-export function TeacherCard({ item, index }) {
-  const Star = Array(5).fill(
-    <Image
-      src={"/img/home/star.svg"}
-      width={20}
-      height={20}
-      alt=""
-      quality={90}
-    />
-  );
-
+export function TeacherCard({ item }) {
   return (
     <div className="flex items-center gap-6">
       <Image src={item.photo} alt="" width={200} height={200} quality={90} />
@@ -131,7 +121,18 @@ export function TeacherCard({ item, index }) {
               <p className="font-medium text-green1">Guru Expert</p>
             </div>
             <div className="flex items-center gap-1">
-              <div className="flex">{Star}</div>
+              <div className="flex">
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <Image
+                    key={index}
+                    src={"/img/home/star.svg"}
+                    width={20}
+                    height={20}
+                    alt=""
+                    quality={90}
+                  />
+                ))}
+              </div>
               <p className="text-sm text-grey1">{`(${item.review})`}</p>
             </div>
           </div>
