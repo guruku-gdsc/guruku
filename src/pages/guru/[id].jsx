@@ -47,7 +47,7 @@ const TopTeacherList = [
   {
     id: 5,
     name: "Khalisa",
-    desc: "Mahasiswa S2 Unesa menawarkan Kursus Matematika Jenjang SD, SMP dan SMA dan persiapan SNBT serta persiapan tes kedinasan di Surabaya dan seluruh Indonesia. Join yuk, dapatkan pengalaman belajar matem ...",
+    desc: "Mahasiswa S2 Unesa menawarkan Kursus Matematika Jenjang SD, SMP dan SMA dan persiapan SNBT serta persiapan tes kedinasan di Surabaya dan seluruh Indonesia. Join yuk, dapatkan pengalaman belajar matematika ...",
     category: ["Matematika", "Guru Umum", "Sp Disabilitas"],
     rate: "Rp 140.000/jam",
     review: "80",
