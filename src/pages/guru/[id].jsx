@@ -1,12 +1,16 @@
 import { Button } from "@/components/common/button";
 import { Navbar } from "@/components/common/layouts";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 const labelList = ["Bahasa Jepang", "Guru Umum", "Sp Disabilitas"];
 
 const levelList = ["SD", "SMP", "SMA", "Mahasiswa"];
 
 export default function Guru() {
+  const router = useRouter();
+  const { id, photo, name } = router.query;
+
   return (
     <>
       <div className="bg-green1">
@@ -32,14 +36,14 @@ export default function Guru() {
             </div>
             <div className="w-80 absolute right-10 flex flex-col items-center gap-6 bg-white rounded-2xl p-4">
               <Image
-                src={"/img/guru-1.png"}
+                src={photo}
                 width={280}
                 height={280}
                 alt=""
                 className="rounded-2xl"
               />
               <div className="flex flex-col items-center gap-2">
-                <p className="text-xl font-semibold">Aliya Manroe</p>
+                <p className="text-xl font-semibold">{name}</p>
                 <div className="flex items-center gap-1">
                   <div className="flex">
                     <Image

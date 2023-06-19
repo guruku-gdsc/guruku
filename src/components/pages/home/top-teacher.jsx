@@ -1,8 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 const TopTeacherList = [
   {
+    id: 1,
     name: "Aliya",
     desc: "Lulusan ITB yang telah 8 tahun belajar Bahasa Jepang sebagai hobi hingga meraih Sertifikasi internasional dengan nilai sempurna. Berpengalaman 4 tahun mengajar murid dengan berbagai usia ...",
     category: ["Bahasa Jepang", "Guru Umum"],
@@ -11,6 +13,7 @@ const TopTeacherList = [
     photo: "/img/home/top-teacher-1.png",
   },
   {
+    id: 2,
     name: "Leo",
     desc: "Seorang Software Developer dengan pengalaman 7 tahun yang menawarkan kursus belajar bahasa pemrograman PHP, Javascript, Laravel, Python, HTML, CSS, MySQL, Bootstrap, ...",
     category: ["Pemrograman Web", "Guru Umum", "Sp Disabilitas"],
@@ -19,6 +22,7 @@ const TopTeacherList = [
     photo: "/img/home/top-teacher-4.png",
   },
   {
+    id: 3,
     name: "Nadia",
     desc: "Kursus akuntansi keuangan, perpajakan dan manajemen keuangan dengan metode pembelajaran yang simpel, serta jasa kompilasi laporan keuangan dan perpajakan ...",
     category: ["Akuntansi", "Guru Umum"],
@@ -27,6 +31,7 @@ const TopTeacherList = [
     photo: "/img/home/top-teacher-2.png",
   },
   {
+    id: 4,
     name: "Katrin",
     desc: "UK graduate tutoring in IELTS Academic, English Conversational Class and English for School & University Students (for aged 13 and above). Flexible schedule and personalised syllabus!",
     category: ["Bahasa Inggris", "Guru Umum", "Sp Disabilitas"],
@@ -35,6 +40,7 @@ const TopTeacherList = [
     photo: "/img/home/top-teacher-5.png",
   },
   {
+    id: 5,
     name: "Khalisa",
     desc: "Mahasiswa S2 Unesa menawarkan Kursus Matematika Jenjang SD, SMP dan SMA dan persiapan SNBT serta persiapan tes kedinasan di Surabaya dan seluruh Indonesia. Join yuk, dapatkan pengalaman belajar matem ...",
     category: ["Matematika", "Guru Umum", "Sp Disabilitas"],
@@ -43,6 +49,7 @@ const TopTeacherList = [
     photo: "/img/home/top-teacher-3.png",
   },
   {
+    id: 6,
     name: "James",
     desc: "Dosen dan pengajar privat eksakta, khususnya pelatih OSN Kimia SMA hingga tingkat provinsi serta ongoing kandidat S3, lulusan S2 TL ITB dan S1 TK UNPAR dengan pengalaman mengajar 7 tahun ...",
     category: ["Kimia", "Guru Umum", "Sp Disabilitas"],
@@ -95,7 +102,12 @@ export default function TopTeacher() {
         </div>
         <div className="grid grid-cols-2 mt-10 gap-y-10 gap-x-8">
           {filteredTopTeacherList.map((item) => (
-            <TeacherCard key={item.name} item={item} />
+            <Link
+              key={item.id}
+              href={`/guru/${item.id}?photo=${item.photo}&name=${item.name}`}
+            >
+              <TeacherCard item={item} />
+            </Link>
           ))}
         </div>
       </div>
@@ -105,7 +117,7 @@ export default function TopTeacher() {
 
 export function TeacherCard({ item }) {
   return (
-    <div className="flex items-center gap-6">
+    <div className="flex items-center gap-6 hover:scale-95 transition">
       <Image src={item.photo} alt="" width={200} height={200} quality={90} />
       <div className="flex flex-col gap-5 content">
         <div className="flex items-center justify-between">
