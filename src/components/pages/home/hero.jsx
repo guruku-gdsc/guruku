@@ -3,6 +3,7 @@ import { Input } from "@/components/common/input";
 import { Navbar } from "@/components/common/layouts";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useState } from "react";
 
 const subjectSuggestions = [
@@ -15,6 +16,7 @@ const subjectSuggestions = [
 export default function Hero() {
   const [searchInput, setSearchInput] = useState("");
   const [showSuggestions, setShowSuggestions] = useState(false);
+  const router = useRouter();
 
   const handleInputChange = (e) => {
     const inputValue = e.target.value;
@@ -51,9 +53,16 @@ export default function Hero() {
               value={searchInput}
               onChange={handleInputChange}
             />
-            <Link href={"/cari-guru"}>
-              <Button className={"h-full"}>Temukan Guru Terbaik</Button>
-            </Link>
+            <Button
+              className={"h-full"}
+              onClick={() =>
+                router.push(
+                  `/cari-guru?guru=${encodeURIComponent(searchInput)}`
+                )
+              }
+            >
+              Temukan Guru Terbaik
+            </Button>
             {showSuggestions && (
               <div className="absolute top-[72px] left-0 bg-white border border-grey1 rounded-lg shadow py-2 px-4 z-10">
                 <ul className="divide-y divide-gray-200">

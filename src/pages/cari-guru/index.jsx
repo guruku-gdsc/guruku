@@ -3,6 +3,7 @@ import { Input } from "@/components/common/input";
 import { Navbar } from "@/components/common/layouts";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useState } from "react";
 
 const teacherList = [
@@ -14,6 +15,7 @@ const teacherList = [
     rate: "Rp 200.000/jam",
     review: "140",
     photo: "/img/home/top-teacher-1.png",
+    keahlian: "Bahasa Jepang",
   },
   {
     id: 2,
@@ -23,6 +25,7 @@ const teacherList = [
     rate: "Rp 180.000/jam",
     review: "78",
     photo: "/img/home/top-teacher-4.png",
+    keahlian: "Pemrograman Web",
   },
   {
     id: 3,
@@ -32,6 +35,7 @@ const teacherList = [
     rate: "Rp 150.000/jam",
     review: "122",
     photo: "/img/home/top-teacher-2.png",
+    keahlian: "Akuntansi",
   },
   {
     id: 4,
@@ -41,6 +45,7 @@ const teacherList = [
     rate: "Rp 175.000/jam",
     review: "110",
     photo: "/img/home/top-teacher-5.png",
+    keahlian: "Bahasa Inggris",
   },
   {
     id: 5,
@@ -50,6 +55,7 @@ const teacherList = [
     rate: "Rp 140.000/jam",
     review: "80",
     photo: "/img/home/top-teacher-3.png",
+    keahlian: "Matematika",
   },
   {
     id: 6,
@@ -59,14 +65,19 @@ const teacherList = [
     rate: "Rp 125.000/jam",
     review: "95",
     photo: "/img/home/top-teacher-6.png",
+    keahlian: "Kimia",
   },
 ];
 
 export default function CariGuru() {
   const [selectedCategory, setSelectedCategory] = useState("Guru Umum");
+  const { guru } = useRouter().query;
+  const [searchedTeacher, setSearchedTeacher] = useState(guru);
 
-  const filteredTopTeacherList = teacherList.filter((item) =>
-    item.category.includes(selectedCategory)
+  const filteredTopTeacherList = teacherList.filter(
+    (item) =>
+      item.category.includes(selectedCategory) &&
+      item.keahlian.toLowerCase().includes(searchedTeacher.toLowerCase())
   );
 
   return (
@@ -87,6 +98,8 @@ export default function CariGuru() {
               inputClassName={
                 "!text-black placeholder:!text-grey1 !border-grey1"
               }
+              value={searchedTeacher}
+              onChange={(e) => setSearchedTeacher(e.target.value)}
             />
             <Button>Cari</Button>
           </div>
