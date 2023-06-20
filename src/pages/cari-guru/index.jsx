@@ -72,7 +72,7 @@ const teacherList = [
 export default function CariGuru() {
   const [selectedCategory, setSelectedCategory] = useState("Guru Umum");
   const { guru } = useRouter().query;
-  const [searchedTeacher, setSearchedTeacher] = useState(guru);
+  const [searchedTeacher, setSearchedTeacher] = useState(guru || "");
 
   const filteredTopTeacherList = teacherList.filter(
     (item) =>
