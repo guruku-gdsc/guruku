@@ -7,16 +7,16 @@ import { useState } from "react";
 export default function Daftar() {
   const [selectedRegister, setSelectedRegister] = useState("guru"); // ["guru", "murid"]
   const [formData, setFormData] = useState({
-    emailGuru: "",
-    passwordGuru: "",
-    namaGuru: "",
-    jenisKelaminGuru: "",
-    tipeGuru: "",
-    emailMurid: "",
-    passwordMurid: "",
-    namaMurid: "",
-    tingkatPendidikanMurid: "",
+    fullname: "",
+    emails: "",
+    jenisKel: "",
+    nomor: "",
+    keahlian: "",
+    user_type: "guru",
+    password: "",
   });
+
+  console.log(formData);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -27,6 +27,27 @@ export default function Daftar() {
     e.preventDefault();
     console.log(formData);
   };
+
+  async function handleRegister() {
+    console.log("submitted");
+
+    try {
+      const response = await fetch("https://api.dbme.cloud/?r=auth&register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode: "no-cors",
+        body: JSON.stringify(formData),
+      });
+      const data = await response.json();
+      if (data) {
+        console.log(data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
     <>
@@ -77,23 +98,44 @@ export default function Daftar() {
             {selectedRegister === "guru" ? (
               <>
                 <input
+                  type="text"
+                  name="fullname"
+                  placeholder="Nama Lengkap"
+                  onChange={handleInputChange}
+                  className="px-6 py-5 bg-[#fafafa] rounded-lg outline-none transition focus:bg-[#f5f5f5]"
+                />
+                <input
                   type="email"
-                  name="emailGuru"
+                  name="emails"
                   placeholder="Email"
                   onChange={handleInputChange}
                   className="px-6 py-5 bg-[#fafafa] rounded-lg outline-none transition focus:bg-[#f5f5f5]"
                 />
                 <input
-                  type="text"
-                  name="namaGuru"
-                  placeholder="Nama Lengkap"
+                  type="number"
+                  name="nomor"
+                  placeholder="No Handphone"
                   onChange={handleInputChange}
                   className="px-6 py-5 bg-[#fafafa] rounded-lg outline-none transition focus:bg-[#f5f5f5]"
                 />
+                <select
+                  defaultValue={"Keahlian Guru"}
+                  name="keahlian"
+                  onChange={handleInputChange}
+                  className="px-6 py-5 bg-[#fafafa] rounded-lg outline-none transition focus:bg-[#f5f5f5] border-r-transparent border-r-[24px]"
+                >
+                  <option value="Keahlian Guru" disabled>
+                    Keahlian Guru
+                  </option>
+                  <option value="Bahasa Inggris">Bahasa Inggris</option>
+                  <option value="Matematika">Matematika</option>
+                  <option value="Sejarah">Sejarah</option>
+                  <option value="Bahasa Jepang">Bahasa Jepang</option>
+                </select>
 
                 <select
                   defaultValue={"Jenis Kelamin"}
-                  name="jenisKelaminGuru"
+                  name="jenisKel"
                   onChange={handleInputChange}
                   className="px-6 py-5 bg-[#fafafa] rounded-lg outline-none transition focus:bg-[#f5f5f5] border-r-transparent border-r-[24px]"
                 >
@@ -117,7 +159,7 @@ export default function Daftar() {
 
                 <input
                   type="password"
-                  name="passwordGuru"
+                  name="password"
                   placeholder="Kata Sandi"
                   onChange={handleInputChange}
                   className="px-6 py-5 bg-[#fafafa] rounded-lg outline-none transition focus:bg-[#f5f5f5]"
@@ -161,7 +203,7 @@ export default function Daftar() {
             )}
           </form>
 
-          <Button>Daftar</Button>
+          <Button onClick={handleRegister}>Daftar</Button>
           <div className="flex justify-center gap-1 text-center">
             <p className="text-grey1">Sudah punya akun?</p>
             <Link
