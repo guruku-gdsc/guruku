@@ -40,8 +40,8 @@ const LinkList = [
 
 export default function Footer() {
   return (
-    <footer className="pt-10 pb-2 mt-20 text-white px-28 bg-green1">
-      <div className="flex flex-col gap-6">
+    <footer className="pt-10 pb-2 mt-20 text-white bg-green1">
+      <div className="wrapper flex flex-col gap-6">
         <div className="flex justify-between">
           <div className="flex flex-col gap-2">
             <div className="flex items-center gap-2">
