@@ -1,7 +1,9 @@
 const variants = {
   primary: "font-semibold text-black bg-yellow1 hover:bg-[#EEB31D]",
   outline:
-    "text-white1 bg-transparent border border-white1 hover:bg-white hover:text-green1",
+    "bg-transparent border border-white1 text-white1 hover:bg-white hover:text-green1",
+  "outline-dark":
+    "bg-transparent border border-green1 text-green1 hover:bg-green1 hover:text-white",
 };
 
 export default function Button({
