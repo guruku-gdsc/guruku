@@ -6,6 +6,7 @@ export default function Input({
   className,
   value,
   onChange,
+  inputClassName,
 }) {
   return (
     <div className={`flex-1 relative flex items-center ${className}`}>
@@ -24,7 +25,7 @@ export default function Input({
         onChange={onChange}
         className={`w-full h-full text-sm text-white2 placeholder:text-white2 bg-transparent border border-white rounded-lg outline-none py-5 px-4 ${
           icon ? "pl-12" : "px-4"
-        } $}`}
+        } ${inputClassName}`}
       />
     </div>
   );
