@@ -2,8 +2,33 @@ import { Button } from "@/components/common/button";
 import { Input } from "@/components/common/input";
 import { Navbar } from "@/components/common/layouts";
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useState } from "react";
+
+const subjectSuggestions = [
+  "Bahasa Inggris",
+  "Matematika",
+  "Sejarah",
+  "Bahasa Jepang",
+];
 
 export default function Hero() {
+  const [searchInput, setSearchInput] = useState("");
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const router = useRouter();
+
+  const handleInputChange = (e) => {
+    const inputValue = e.target.value;
+    setSearchInput(inputValue);
+    setShowSuggestions(inputValue !== "");
+  };
+
+  const handleSuggestionClick = (suggestion) => {
+    setSearchInput(suggestion);
+    setShowSuggestions(false);
+  };
+
   return (
     <div className="flex flex-col max-h-md:min-h-screen bg-green1">
       <Navbar />
@@ -18,12 +43,41 @@ export default function Hero() {
             Dengan metode belajar online dan offline, kami membantu memenuhi
             kebutuhan pendidikan Anda dengan cara yang nyaman dan terpercaya.
           </p>
-          <div className="flex w-3/4 gap-2 xl:w-full">
+          <div
+            className="h-16 relative flex w-3/4 gap-2 xl:w-full"
+            onClick={() => setShowSuggestions(!showSuggestions)}
+          >
             <Input
               placeholder={"Apa yang ingin kamu pelajari?"}
               icon={"search"}
+              value={searchInput}
+              onChange={handleInputChange}
             />
-            <Button>Temukan Guru Terbaik</Button>
+            <Button
+              className={"h-full"}
+              onClick={() =>
+                router.push(
+                  `/cari-guru?guru=${encodeURIComponent(searchInput)}`
+                )
+              }
+            >
+              Temukan Guru Terbaik
+            </Button>
+            {showSuggestions && (
+              <div className="absolute top-[72px] left-0 bg-white border border-grey1 rounded-lg shadow py-2 px-4 z-10">
+                <ul className="divide-y divide-gray-200">
+                  {subjectSuggestions.map((suggestion, index) => (
+                    <li
+                      key={index}
+                      className="py-2 cursor-pointer hover:bg-gray-100"
+                      onClick={() => handleSuggestionClick(suggestion)}
+                    >
+                      {suggestion}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </div>
         <Image
