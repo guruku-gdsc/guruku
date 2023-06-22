@@ -3,6 +3,7 @@ import { Navbar } from "@/components/common/layouts";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 export default function Masuk() {
   const [selectedLogin, setSelectedLogin] = useState("guru"); // ["guru", "murid"]
@@ -20,7 +21,7 @@ export default function Masuk() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    toast.info("Coming soon!");
   };
 
   return (
@@ -120,7 +121,7 @@ export default function Masuk() {
               Lupa sandi?
             </Link>
           </div>
-          <Button>Masuk</Button>
+          <Button onClick={handleSubmit}>Masuk</Button>
           <div className="flex justify-center gap-1 text-center">
             <p className="text-grey1">Belum punya akun?</p>
             <Link
