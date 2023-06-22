@@ -3,20 +3,19 @@ import { Navbar } from "@/components/common/layouts";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 export default function Daftar() {
   const [selectedRegister, setSelectedRegister] = useState("guru"); // ["guru", "murid"]
   const [formData, setFormData] = useState({
-    fullname: "",
-    emails: "",
-    jenisKel: "",
-    nomor: "",
-    keahlian: "",
+    emails: "hellow5@gmail.com",
+    fullname: "hellow5",
+    jenisKel: "Laki laki",
+    nomor: "0888",
+    keahlian: "Matematika",
     user_type: "guru",
-    password: "",
+    password: "pass",
   });
-
-  console.log(formData);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -25,29 +24,8 @@ export default function Daftar() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    toast.info("Coming soon!");
   };
-
-  async function handleRegister() {
-    console.log("submitted");
-
-    try {
-      const response = await fetch("https://api.dbme.cloud/?r=auth&register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        mode: "no-cors",
-        body: JSON.stringify(formData),
-      });
-      const data = await response.json();
-      if (data) {
-        console.log(data);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  }
 
   return (
     <>
@@ -203,7 +181,7 @@ export default function Daftar() {
             )}
           </form>
 
-          <Button onClick={handleRegister}>Daftar</Button>
+          <Button onClick={handleSubmit}>Daftar</Button>
           <div className="flex justify-center gap-1 text-center">
             <p className="text-grey1">Sudah punya akun?</p>
             <Link
